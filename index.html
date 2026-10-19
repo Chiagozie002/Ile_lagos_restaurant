@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ILE Lagos Chophouse | Bold Flavours. Unforgettable Dining.</title>
+    <meta
+      name="description"
+      content="Premium Lagos chophouse: browse the menu and request a reservation."
+    />
+    <meta
+      property="og:title"
+      content="ILE Lagos Chophouse | Bold Flavours. Unforgettable Dining."
+    />
+    <meta
+      property="og:description"
+      content="Premium Lagos chophouse: browse the menu and request a reservation."
+    />
+    <script>
+      window.ILE_ROOT = '';
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/demo-store.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Swap to Font Awesome 7 CDN URL if you have it -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23FF7900%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%2317140f%27%3EI%3C/text%3E%3C/svg%3E"
+    />
+    <!-- favicon placeholder: replace with the real icon -->
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="preloader" aria-live="polite">
+      <div class="brand">ILE <b>Lagos</b> Chophouse</div>
+      <div class="muted" style="color: #c9bcae">Bold Flavours. Unforgettable Dining.</div>
+      <div class="pl-bar"><i></i></div>
+      <small style="color: var(--amber)">Setting the table…</small>
+    </div>
+    <div id="toasts" aria-live="polite"></div>
+
+    <!-- START: PUBLIC NAVBAR -->
+    <nav class="ile-nav navbar navbar-expand-lg">
+      <div class="container">
+        <a class="brand" href="index.html">ILE <b>Lagos</b> Chophouse</a>
+        <div class="d-flex align-items-center gap-2 order-lg-3">
+          <!--
+            LOGIN BUTTON: uncomment when PHP session integration is ready (show only to guests).
+            <a class="btn btn-ile btn-sm" href="auth/login.html">Login</a>
+          -->
+
+          <!-- Customer profile: always in the source. PHP decides who can reach these links. -->
+          <div class="profile-wrap">
+            <button
+              class="profile-btn"
+              aria-label="Account menu"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <!-- Avatar: swap the icon for <img src="PROFILE_IMAGE_URL" alt=""> when the customer has a photo -->
+              <span class="avatar"><i class="fa-solid fa-user"></i></span>
+              <!-- PHP: echo the customer's first name here -->
+              <span class="pname">Demo</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </button>
+            <div class="profile-menu" role="menu">
+              <div class="profile-head">
+                <strong>Customer Name</strong><br /><small>customer@email.com</small>
+              </div>
+              <a role="menuitem" href="user/dashboard.html"
+                ><i class="fa-solid fa-gauge"></i>Dashboard</a
+              ><a role="menuitem" href="user/reservations.html"
+                ><i class="fa-solid fa-calendar-check"></i>My Reservations</a
+              ><a role="menuitem" href="user/profile.html"
+                ><i class="fa-solid fa-id-badge"></i>My Profile</a
+              ><a role="menuitem" href="user/settings.html"
+                ><i class="fa-solid fa-gear"></i>Settings</a
+              ><a role="menuitem" href="user/testimonials.html"
+                ><i class="fa-solid fa-star"></i>My Testimonials</a
+              >
+              <button role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i>Logout
+              </button>
+            </div>
+          </div>
+          <button
+            class="navbar-toggler border-0"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+            aria-label="Open menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-end" id="nav" tabindex="-1">
+          <div class="offcanvas-header">
+            <span class="brand">ILE <b>Lagos</b></span
+            ><button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body justify-content-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="pages/menu.html">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="pages/about.html">Our Story</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/reservations.html">Reservations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/testimonials.html">Testimonials</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END: PUBLIC NAVBAR -->
+
+    <button class="theme-toggle" id="themeToggle" type="button">
+      <i class="fa-solid fa-moon"></i><span>LIGHT</span>
+    </button>
+    <main id="main">
+      <section class="hero">
+        <!--
+        HERO CAROUSEL IMAGES: just edit the src of each <img> below (add or remove slides as you like).
+        The first image loads at high priority; the others load lazily. Keep alt="" (decorative).
+        Recommended: 1920x1080 landscape JPG/WebP, under 300 KB.
+      -->
+        <img
+          class="hero-slide on"
+          src="assets/images/hero/hero-1.svg"
+          alt=""
+          fetchpriority="high"
+        />
+        <img class="hero-slide" src="assets/images/hero/hero-2.svg" alt="" loading="lazy" />
+        <img class="hero-slide" src="assets/images/hero/hero-3.svg" alt="" loading="lazy" />
+        <div class="container py-5">
+          <p class="eyebrow">Welcome to ILE Lagos Chophouse</p>
+          <h1>Bold Flavours. Unforgettable Dining.</h1>
+          <p class="mb-4">
+            Fire, spice and hospitality, plated with care.
+            <!-- Sample copy: client to replace -->
+          </p>
+          <div class="d-flex flex-row flex-wrap gap-3">
+            <a class="btn btn-ile" href="pages/menu.html">Explore Our Menu</a
+            ><a class="btn-ghost text-center text-decoration-none" href="pages/reservations.html"
+              >Reserve a Table</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-end mb-4 reveal">
+            <div class="col-lg-7"><h2>Dishes we are known for</h2></div>
+            <div class="col-lg-5">
+              <p class="muted mb-0">
+                Demonstration dishes and prices. Replace with real menu data.
+              </p>
+            </div>
+          </div>
+          <div class="row g-4 reveal">
+            <div class="col-md-6 col-lg-4">
+              <article class="dish">
+                <div class="dish-img">
+                  <img
+                    src="assets/images/menu/jollof.svg"
+                    alt="Smoky Party Jollof"
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                    onerror="
+                      this.replaceWith(
+                        Object.assign(document.createElement('i'), {
+                          className: 'fa-solid fa-utensils',
+                        }),
+                      )
+                    "
+                  />
+                </div>
+                <div class="dish-body">
+                  <span class="cat">Mains</span>
+                  <h3>Smoky Party Jollof</h3>
+                  <p>Long-simmered tomato rice with a charred smoke finish.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <span class="price">₦4,500</span
+                    ><a
+                      href="pages/product-details.html?id=jollof"
+                      class="stretched-link small fw-semibold"
+                      style="text-decoration: none"
+                      >View details</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="dish">
+                <div class="dish-img">
+                  <img
+                    src="assets/images/menu/suya.svg"
+                    alt="Suya Ribeye"
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                    onerror="
+                      this.replaceWith(
+                        Object.assign(document.createElement('i'), {
+                          className: 'fa-solid fa-utensils',
+                        }),
+                      )
+                    "
+                  />
+                </div>
+                <div class="dish-body">
+                  <span class="cat">Grill</span>
+                  <h3>Suya Ribeye</h3>
+                  <p>Thick-cut ribeye rubbed in yaji spice and fire-grilled.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <span class="price">₦9,800</span
+                    ><a
+                      href="pages/product-details.html?id=suya"
+                      class="stretched-link small fw-semibold"
+                      style="text-decoration: none"
+                      >View details</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="dish">
+                <div class="dish-img">
+                  <img
+                    src="assets/images/menu/pepper.svg"
+                    alt="Peppered Snail"
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                    onerror="
+                      this.replaceWith(
+                        Object.assign(document.createElement('i'), {
+                          className: 'fa-solid fa-utensils',
+                        }),
+                      )
+                    "
+                  />
+                </div>
+                <div class="dish-body">
+                  <span class="cat">Starters</span>
+                  <h3>Peppered Snail</h3>
+                  <p>Garlic-butter snails in a bold pepper sauce.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <span class="price">₦6,500</span
+                    ><a
+                      href="pages/product-details.html?id=pepper"
+                      class="stretched-link small fw-semibold"
+                      style="text-decoration: none"
+                      >View details</a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="container">
+          <div class="row g-4 align-items-center reveal">
+            <div class="col-lg-6">
+              <h2>Why dine with us</h2>
+              <p class="muted">
+                Placeholder copy: describe your sourcing, your grill, your service. No awards or
+                dates are claimed here.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="row g-3">
+                <div class="col-sm-4">
+                  <i class="fa-solid fa-fire fs-3 text-warning"></i>
+                  <h3 class="mt-2">Fire-led kitchen</h3>
+                </div>
+                <div class="col-sm-4">
+                  <i class="fa-solid fa-heart fs-3 text-warning"></i>
+                  <h3 class="mt-2">Warm hospitality</h3>
+                </div>
+                <div class="col-sm-4">
+                  <i class="fa-solid fa-wine-glass fs-3 text-warning"></i>
+                  <h3 class="mt-2">Evenings to remember</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ RESERVATION CTA with floating round dish photos (decorative; edit the src values) ============ -->
+      <section class="section reserve-cta">
+        <span class="float-ring fr1" aria-hidden="true"></span>
+        <span class="float-ring fr2" aria-hidden="true"></span>
+        <img
+          class="float-pic fp1"
+          src="assets/images/menu/jollof.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          class="float-pic fp2"
+          src="assets/images/menu/suya.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          class="float-pic fp3"
+          src="assets/images/menu/zobo.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          class="float-pic fp4"
+          src="assets/images/menu/chinchin.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          class="float-pic fp5"
+          src="assets/images/menu/tilapia.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          class="float-pic fp6"
+          src="assets/images/menu/puff.svg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <div class="container reveal">
+          <p class="eyebrow">Dinner is better together</p>
+          <h2>Save your table</h2>
+          <p class="muted">Send a request. Our team reviews it and confirms by email.</p>
+          <a class="btn btn-ile" href="pages/reservations.html">Reserve a Table</a>
+        </div>
+      </section>
+
+      <!-- Our Story preview (placeholder copy) -->
+      <section class="section">
+        <div class="container">
+          <div class="row g-4 align-items-center reveal">
+            <div class="col-lg-6">
+              <h2>Our story</h2>
+              <p class="muted">
+                Placeholder: a short introduction to the restaurant, supplied by the client.
+              </p>
+              <a
+                class="btn-ghost text-decoration-none"
+                style="color: var(--text)"
+                href="pages/about.html"
+                >Read our story</a
+              >
+            </div>
+            <div class="col-lg-6">
+              <div class="dish-img rounded-4" style="aspect-ratio: 16/10">
+                <img
+                  src="assets/images/hero/hero-3.svg"
+                  alt="Our dining room"
+                  class="w-100 h-100"
+                  style="object-fit: cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TESTIMONIALS: centred carousel with arrows and dots ============ -->
+      <!-- Slides are built by js/testimonials.js from ajax/testimonials/list.php (approved only). -->
+      <section class="section band">
+        <div class="container reveal">
+          <p class="eyebrow text-center mb-1">Kind words</p>
+          <h2 class="text-center">What guests say</h2>
+          <div class="t-stage">
+            <div
+              id="tCar"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="7000"
+              aria-label="Guest testimonials"
+            >
+              <div class="t-wrap">
+                <button
+                  type="button"
+                  class="t-nav prev"
+                  data-bs-target="#tCar"
+                  data-bs-slide="prev"
+                  aria-label="Previous testimonial"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-inner" id="tSlides"></div>
+                <button
+                  type="button"
+                  class="t-nav next"
+                  data-bs-target="#tCar"
+                  data-bs-slide="next"
+                  aria-label="Next testimonial"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="carousel-indicators t-dots" id="tDots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FIND US: info card + live map (edit the text and the iframe src) ============ -->
+      <section class="section findus">
+        <div class="container reveal">
+          <div class="findus-card">
+            <div class="findus-info">
+              <p class="eyebrow">Come hungry</p>
+              <h2>Find us</h2>
+              <p class="muted">
+                Right in the heart of Lekki. Walk in, or send a reservation request and we will save
+                you a table.
+              </p>
+              <ul class="findus-list">
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div>
+                    <strong>Address</strong><span>12 Admiralty Way, Lekki Phase 1, Lagos</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <div><strong>Call us</strong><span>+234 801 234 5678</span></div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-clock"></i>
+                  <div>
+                    <strong>Opening hours</strong
+                    ><span>Mon–Thu 12pm–10pm<br />Fri–Sat 12pm–11pm<br />Sun 1pm–9pm</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a
+                  class="btn btn-ile"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=12%20Admiralty%20Way%2C%20Lekki%20Phase%201%2C%20Lagos"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-solid fa-diamond-turn-right me-1"></i>Get directions
+                </a>
+                <a class="btn-ghost text-decoration-none" href="pages/contact.html">Contact us</a>
+              </div>
+            </div>
+            <div class="findus-map">
+              <!-- MAP: replace the iframe src to change the location (see the About page for how) -->
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=3.4560%2C6.4400%2C3.4890%2C6.4550&amp;layer=mapnik&amp;marker=6.4474%2C3.4723"
+                title="Map showing the location of ILE Lagos Chophouse"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <span class="findus-pin"
+                ><i class="fa-solid fa-utensils"></i>ILE Lagos Chophouse</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- START: PUBLIC FOOTER -->
+    <!-- SAMPLE business details below (address, phone, hours, email). Replace with the restaurant's real information. -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="brand mb-2">ILE <b>Lagos</b> Chophouse</div>
+            <p>Bold Flavours. Unforgettable Dining.</p>
+            <p class="small">
+              Fire-led Nigerian cooking, warm hospitality and unforgettable evenings in the heart of
+              Lekki.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h4 class="h6">Explore</h4>
+            <div class="d-grid gap-1">
+              <a href="pages/menu.html">Menu</a><a href="pages/about.html">Our Story</a
+              ><a href="pages/reservations.html">Reservations</a
+              ><a href="pages/contact.html">Contact</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h4 class="h6">Visit</h4>
+            <p class="small mb-1">12 Admiralty Way, Lekki Phase 1, Lagos</p>
+            <p class="small mb-1">+234 801 234 5678</p>
+            <p class="small mb-1">hello@ilelagoschophouse.com</p>
+            <p class="small">Hours: Mon–Thu 12pm–10pm<br />Fri–Sat 12pm–11pm<br />Sun 1pm–9pm</p>
+          </div>
+          <div class="col-lg-3">
+            <h4 class="h6">Follow</h4>
+            <div class="d-flex gap-3 fs-5">
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a
+              ><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a
+              ><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color: rgba(255, 255, 255, 0.15)" />
+        <div class="d-flex flex-wrap justify-content-between gap-2 small">
+          <span>© <span id="year"></span> ILE Lagos Chophouse</span
+          ><span
+            ><a href="pages/privacy-policy.html">Privacy Policy</a> ·
+            <a href="pages/terms-and-conditions.html">Terms &amp; Conditions</a></span
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- END: PUBLIC FOOTER -->
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="lm">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: var(--surface); color: var(--text)">
+          <div class="modal-body p-4">
+            <h3 id="lm">Log out?</h3>
+            <p class="muted">You will need to sign in again to manage reservations.</p>
+            <div class="d-flex gap-2 justify-content-end">
+              <button class="btn-ghost" data-bs-dismiss="modal">Stay</button
+              ><button class="btn btn-ile" id="logoutConfirm">Log out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/pages/home.js"></script>
+  </body>
+</html>

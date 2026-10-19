@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Our Story | ILE Lagos Chophouse</title>
+    <meta name="description" content="The story behind ILE Lagos Chophouse." />
+    <meta
+      property="og:title"
+      content="ILE Lagos Chophouse | Bold Flavours. Unforgettable Dining."
+    />
+    <meta
+      property="og:description"
+      content="Premium Lagos chophouse: browse the menu and request a reservation."
+    />
+    <script>
+      window.ILE_ROOT = '../';
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/demo-store.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Swap to Font Awesome 7 CDN URL if you have it -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23FF7900%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%2317140f%27%3EI%3C/text%3E%3C/svg%3E"
+    />
+    <!-- favicon placeholder: replace with the real icon -->
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="preloader" aria-live="polite">
+      <div class="brand">ILE <b>Lagos</b> Chophouse</div>
+      <div class="muted" style="color: #c9bcae">Bold Flavours. Unforgettable Dining.</div>
+      <div class="pl-bar"><i></i></div>
+      <small style="color: var(--amber)">Setting the table…</small>
+    </div>
+    <div id="toasts" aria-live="polite"></div>
+
+    <!-- START: PUBLIC NAVBAR -->
+    <nav class="ile-nav navbar navbar-expand-lg">
+      <div class="container">
+        <a class="brand" href="../index.html">ILE <b>Lagos</b> Chophouse</a>
+        <div class="d-flex align-items-center gap-2 order-lg-3">
+          <!--
+            LOGIN BUTTON: uncomment when PHP session integration is ready (show only to guests).
+            <a class="btn btn-ile btn-sm" href="../auth/login.html">Login</a>
+          -->
+
+          <!-- Customer profile: always in the source. PHP decides who can reach these links. -->
+          <div class="profile-wrap">
+            <button
+              class="profile-btn"
+              aria-label="Account menu"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <!-- Avatar: swap the icon for <img src="PROFILE_IMAGE_URL" alt=""> when the customer has a photo -->
+              <span class="avatar"><i class="fa-solid fa-user"></i></span>
+              <!-- PHP: echo the customer's first name here -->
+              <span class="pname">Demo</span>
+              <i class="fa-solid fa-chevron-down chev" aria-hidden="true"></i>
+            </button>
+            <div class="profile-menu" role="menu">
+              <div class="profile-head">
+                <strong>Customer Name</strong><br /><small>customer@email.com</small>
+              </div>
+              <a role="menuitem" href="../user/dashboard.html"
+                ><i class="fa-solid fa-gauge"></i>Dashboard</a
+              ><a role="menuitem" href="../user/reservations.html"
+                ><i class="fa-solid fa-calendar-check"></i>My Reservations</a
+              ><a role="menuitem" href="../user/profile.html"
+                ><i class="fa-solid fa-id-badge"></i>My Profile</a
+              ><a role="menuitem" href="../user/settings.html"
+                ><i class="fa-solid fa-gear"></i>Settings</a
+              ><a role="menuitem" href="../user/testimonials.html"
+                ><i class="fa-solid fa-star"></i>My Testimonials</a
+              >
+              <button role="menuitem" data-logout>
+                <i class="fa-solid fa-right-from-bracket"></i>Logout
+              </button>
+            </div>
+          </div>
+          <button
+            class="navbar-toggler border-0"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#nav"
+            aria-label="Open menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-end" id="nav" tabindex="-1">
+          <div class="offcanvas-header">
+            <span class="brand">ILE <b>Lagos</b></span
+            ><button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body justify-content-center">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about.html">Our Story</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="reservations.html">Reservations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END: PUBLIC NAVBAR -->
+
+    <button class="theme-toggle" id="themeToggle" type="button">
+      <i class="fa-solid fa-moon"></i><span>LIGHT</span>
+    </button>
+    <main id="main">
+      <!-- ============ 1. PAGE INTRO ============ -->
+      <!-- NOTE: all text on this page is SAMPLE copy. Edit the words directly. -->
+      <section class="page-head">
+        <div class="container">
+          <p class="eyebrow">Our story</p>
+          <h1 style="font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem)">
+            Fire, spice and a seat at the table
+          </h1>
+          <p class="muted" style="max-width: 60ch">
+            ILE Lagos Chophouse was built around one idea: that great Nigerian cooking deserves a
+            room as bold as its flavours. Come hungry, stay for the evening.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 2. THE STORY (text + image) ============ -->
+      <section class="pb-5">
+        <div class="container">
+          <div class="row g-4 g-lg-5 align-items-center">
+            <div class="col-lg-6">
+              <h2 class="h3">Where it began</h2>
+              <p>
+                ILE means "home" in Yoruba, and that is how we want every guest to feel. Our kitchen
+                is built around open-fire grilling, slow-simmered stews and the spice blends that
+                Lagos grew up on.
+              </p>
+              <p>
+                We cook with the same care you would find at a family table: fresh peppers ground
+                daily, meats seasoned overnight, and sauces that are never rushed.
+              </p>
+              <a class="btn btn-ile" href="menu.html">See the menu</a>
+            </div>
+            <div class="col-lg-6">
+              <!-- IMAGE: change the src to your own restaurant photo -->
+              <div class="dish-img rounded-4" style="aspect-ratio: 4 / 3">
+                <img
+                  src="../assets/images/hero/hero-2.svg"
+                  alt="The ILE Lagos Chophouse dining room"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3. OUR VALUES ============ -->
+      <section class="section band">
+        <div class="container">
+          <h2 class="mb-4">What we stand for</h2>
+          <div class="row g-4">
+            <!-- To add a value, copy one column and edit it. A PHP loop can output these too. -->
+            <div class="col-md-6 col-lg-3">
+              <i class="fa-solid fa-fire fs-3 text-warning"></i>
+              <h3 class="h5 mt-2">Fire and spice</h3>
+              <p class="muted">
+                Charcoal grilling and bold seasoning are at the heart of every plate.
+              </p>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <i class="fa-solid fa-heart fs-3 text-warning"></i>
+              <h3 class="h5 mt-2">Honest hospitality</h3>
+              <p class="muted">
+                Warm, attentive service that makes first-timers feel like regulars.
+              </p>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <i class="fa-solid fa-seedling fs-3 text-warning"></i>
+              <h3 class="h5 mt-2">Quality ingredients</h3>
+              <p class="muted">
+                Fresh produce and carefully chosen proteins, prepared daily in-house.
+              </p>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <i class="fa-solid fa-people-group fs-3 text-warning"></i>
+              <h3 class="h5 mt-2">Evenings together</h3>
+              <p class="muted">Dinners, celebrations and long catch-ups around a shared table.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 4. THE EXPERIENCE ============ -->
+      <section class="section">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h2>The dining experience</h2>
+              <p class="muted">
+                From a quick weekday lunch to a long weekend dinner, here is what to expect when you
+                visit.
+              </p>
+            </div>
+            <div class="col-lg-7">
+              <div class="panel mb-3">
+                <h3 class="h5">Grill and kitchen</h3>
+                <p class="muted mb-0">
+                  Suya, ribeye and other fire-grilled dishes cooked to order.
+                </p>
+              </div>
+
+              <div class="panel mb-3">
+                <h3 class="h5">Relaxed, welcoming room</h3>
+                <p class="muted mb-0">
+                  Warm lighting and comfortable seating for groups of all sizes.
+                </p>
+              </div>
+
+              <div class="panel">
+                <h3 class="h5">Reservations</h3>
+                <p class="muted mb-0">Send a request online and our team will confirm by email.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 5. FIND US: MAP + DETAILS ============ -->
+      <section class="pb-5">
+        <div class="container">
+          <h2 class="mb-4">Find us</h2>
+          <div class="row g-4">
+            <div class="col-lg-8">
+              <!--
+                MAP: a real, working embedded map (OpenStreetMap, no API key needed).
+                To change the location, replace the iframe src. Two easy options:
+                1) OpenStreetMap: search your place > Share > "HTML" tab > copy the iframe src.
+                2) Google Maps: search your place > Share > "Embed a map" > copy the src="..." value.
+              -->
+              <div class="map-wrap">
+                <iframe
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=3.4560%2C6.4400%2C3.4890%2C6.4550&amp;layer=mapnik&amp;marker=6.4474%2C3.4723"
+                  title="Map showing the location of ILE Lagos Chophouse"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="panel h-100">
+                <h3 class="h5">Visit us</h3>
+                <p class="mb-2">
+                  <i class="fa-solid fa-location-dot text-warning me-2"></i>
+                  12 Admiralty Way, Lekki Phase 1, Lagos
+                </p>
+                <p class="mb-2">
+                  <i class="fa-solid fa-phone text-warning me-2"></i>
+                  +234 801 234 5678
+                </p>
+                <p class="mb-3">
+                  <i class="fa-solid fa-envelope text-warning me-2"></i>
+                  hello@ilelagoschophouse.com
+                </p>
+
+                <h3 class="h6">Opening hours</h3>
+                <p class="muted mb-3">
+                  Mon–Thu 12pm–10pm<br />
+                  Fri–Sat 12pm–11pm<br />
+                  Sun 1pm–9pm
+                </p>
+
+                <!-- DIRECTIONS LINK: edit the query= address if the location changes -->
+                <a
+                  class="btn-ghost btn-sm text-decoration-none"
+                  style="color: var(--text)"
+                  href="https://www.google.com/maps/search/?api=1&query=12%20Admiralty%20Way%2C%20Lekki%20Phase%201%2C%20Lagos"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Get directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 6. RESERVATION CALL TO ACTION ============ -->
+      <section class="section band text-center">
+        <div class="container">
+          <h2>Join us for dinner</h2>
+          <p class="muted">Request a table and we will take care of the rest.</p>
+          <a class="btn btn-ile" href="reservations.html">Reserve a Table</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- START: PUBLIC FOOTER -->
+    <!-- SAMPLE business details below (address, phone, hours, email). Replace with the restaurant's real information. -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="brand mb-2">ILE <b>Lagos</b> Chophouse</div>
+            <p>Bold Flavours. Unforgettable Dining.</p>
+            <p class="small">
+              Fire-led Nigerian cooking, warm hospitality and unforgettable evenings in the heart of
+              Lekki.
+            </p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h4 class="h6">Explore</h4>
+            <div class="d-grid gap-1">
+              <a href="menu.html">Menu</a><a href="about.html">Our Story</a
+              ><a href="reservations.html">Reservations</a><a href="contact.html">Contact</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h4 class="h6">Visit</h4>
+            <p class="small mb-1">12 Admiralty Way, Lekki Phase 1, Lagos</p>
+            <p class="small mb-1">+234 801 234 5678</p>
+            <p class="small mb-1">hello@ilelagoschophouse.com</p>
+            <p class="small">Hours: Mon–Thu 12pm–10pm<br />Fri–Sat 12pm–11pm<br />Sun 1pm–9pm</p>
+          </div>
+          <div class="col-lg-3">
+            <h4 class="h6">Follow</h4>
+            <div class="d-flex gap-3 fs-5">
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a
+              ><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a
+              ><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color: rgba(255, 255, 255, 0.15)" />
+        <div class="d-flex flex-wrap justify-content-between gap-2 small">
+          <span>© <span id="year"></span> ILE Lagos Chophouse</span
+          ><span
+            ><a href="privacy-policy.html">Privacy Policy</a> ·
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a></span
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- END: PUBLIC FOOTER -->
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="lm">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: var(--surface); color: var(--text)">
+          <div class="modal-body p-4">
+            <h3 id="lm">Log out?</h3>
+            <p class="muted">You will need to sign in again to manage reservations.</p>
+            <div class="d-flex gap-2 justify-content-end">
+              <button class="btn-ghost" data-bs-dismiss="modal">Stay</button
+              ><button class="btn btn-ile" id="logoutConfirm">Log out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
