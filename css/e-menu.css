@@ -1,0 +1,360 @@
+/* =====================================================================
+   E-MENU (QR menu for guests at the table). Dark theme only.
+   Uses the shared tokens, fonts and buttons from css/main.css.
+   ===================================================================== */
+body.emenu {
+  background: #0f0c0a;
+  color: #fff4e8;
+  min-height: 100svh;
+}
+
+/* soft orange glow behind the page */
+.em-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 40% at 85% 0%, rgba(255, 121, 0, 0.22), transparent 70%),
+    radial-gradient(45% 35% at 0% 100%, rgba(244, 81, 30, 0.14), transparent 70%);
+}
+
+/* ---------- top bar: brand left, Visit website right ---------- */
+.em-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(15, 12, 10, 0.72);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 244, 232, 0.1);
+}
+.em-nav .bar {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.em-nav .brand {
+  color: #fff4e8;
+  font-size: clamp(1.05rem, 0.9rem + 1vw, 1.5rem);
+}
+
+/* ---------- hero ---------- */
+.em-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: clamp(2rem, 1rem + 4vw, 3.8rem) 1rem 1.4rem;
+}
+.em-hero h1 {
+  font-size: clamp(2rem, 1.3rem + 3.6vw, 3.6rem);
+  margin-bottom: 0.4rem;
+}
+.em-hero p {
+  color: #c9bcae;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+.em-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.9rem 0 0;
+  color: var(--or);
+}
+.em-rule::before,
+.em-rule::after {
+  content: '';
+  width: 54px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--or));
+}
+.em-rule::after {
+  transform: scaleX(-1);
+}
+
+/* ---------- search + category chips ---------- */
+.em-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+.em-tools {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.em-search {
+  position: relative;
+}
+.em-search i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--or);
+  font-size: 0.85rem;
+}
+.em-search input {
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem 0 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 244, 232, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff4e8;
+  font-size: 0.9rem;
+}
+.em-search input::placeholder {
+  color: #a89a8c;
+}
+.em-search input:focus {
+  outline: none;
+  border-color: var(--or);
+  box-shadow: 0 0 0 3px rgba(255, 121, 0, 0.25);
+}
+.em-chips {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+  scrollbar-width: none;
+}
+.em-chips::-webkit-scrollbar {
+  display: none;
+}
+.em-chip {
+  flex: none;
+  border: 1px solid rgba(255, 244, 232, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e6d9c9;
+  border-radius: 999px;
+  padding: 0.32rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+.em-chip:hover {
+  border-color: var(--or);
+  color: #fff;
+}
+.em-chip.active {
+  background: var(--or);
+  border-color: var(--or);
+  color: #1a0f05;
+  font-weight: 600;
+}
+
+/* ---------- the menu table ---------- */
+.em-card {
+  background: linear-gradient(180deg, rgba(36, 32, 30, 0.88), rgba(26, 22, 19, 0.94));
+  border: 1px solid rgba(255, 159, 28, 0.22);
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+.em-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.em-table thead th {
+  padding: 1rem 1.3rem;
+  text-align: left;
+  font: 600 0.68rem var(--f-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a89a8c;
+  border-bottom: 1px solid rgba(255, 244, 232, 0.1);
+}
+.em-table td {
+  padding: 0.95rem 1.3rem;
+  border-bottom: 1px solid rgba(255, 244, 232, 0.07);
+  vertical-align: middle;
+}
+.em-table tbody tr {
+  transition: background 0.2s ease;
+}
+.em-table tbody tr:hover {
+  background: rgba(255, 121, 0, 0.07);
+}
+.em-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.em-table .num {
+  text-align: right;
+}
+.em-dish strong {
+  display: block;
+  font: 600 1rem var(--f-head);
+  letter-spacing: -0.01em;
+}
+.em-dish small {
+  display: block;
+  margin-top: 0.15rem;
+  color: #b8aa9d;
+  font-size: 0.8rem;
+}
+.em-price {
+  font: 700 1.05rem var(--f-head);
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+/* category badge: a different warm tint per category */
+.em-cat {
+  --c: #ff7900;
+  display: inline-block;
+  padding: 0.18rem 0.72rem;
+  border-radius: 999px;
+  font: 600 0.72rem var(--f-body);
+  letter-spacing: 0.04em;
+  color: var(--c);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+}
+.em-cat.c-grill {
+  --c: #ff6a3d;
+}
+.em-cat.c-starters {
+  --c: #ff9f1c;
+}
+.em-cat.c-desserts {
+  --c: #ff8fab;
+}
+.em-cat.c-drinks {
+  --c: #6fd3a8;
+}
+.em-cat.c-mains {
+  --c: #ff7900;
+}
+
+/* loading skeleton, empty and error states */
+.sk td > i {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: rgba(255, 244, 232, 0.1);
+  animation: skp 1.2s ease-in-out infinite;
+}
+@keyframes skp {
+  50% {
+    opacity: 0.4;
+  }
+}
+.em-state {
+  padding: 2.6rem 1rem;
+  text-align: center;
+  color: #c9bcae;
+}
+.em-state i {
+  font-size: 1.8rem;
+  color: var(--or);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.em-state h2 {
+  font-size: 1.1rem;
+  color: #fff4e8;
+}
+
+/* ---------- pagination ---------- */
+.em-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 0.85rem 1.1rem;
+  border-top: 1px solid rgba(255, 244, 232, 0.1);
+  font-size: 0.78rem;
+  color: #a89a8c;
+}
+.em-pager .pages {
+  display: flex;
+  gap: 0.3rem;
+}
+.em-pg {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 0.6rem;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 244, 232, 0.16);
+  background: transparent;
+  color: #e6d9c9;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.em-pg:hover:not(:disabled) {
+  border-color: var(--or);
+}
+.em-pg.on {
+  background: var(--or);
+  border-color: var(--or);
+  color: #1a0f05;
+  font-weight: 700;
+}
+.em-pg:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.em-end {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #8f8173;
+  font-size: 0.76rem;
+  padding: 0.5rem 1rem 2.4rem;
+  line-height: 1.7;
+}
+
+/* ---------- phones: each row becomes a compact list item ---------- */
+@media (max-width: 640px) {
+  .em-table thead {
+    display: none;
+  }
+  .em-table,
+  .em-table tbody {
+    display: block;
+  }
+  .em-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'dish price' 'cat price';
+    gap: 0.4rem 0.8rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(255, 244, 232, 0.07);
+  }
+  .em-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .em-table td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+  .em-table td.em-dish {
+    grid-area: dish;
+  }
+  .em-table td.cat-cell {
+    grid-area: cat;
+  }
+  .em-table td.num {
+    grid-area: price;
+    align-self: center;
+  }
+  .em-pager {
+    justify-content: center;
+  }
+}
