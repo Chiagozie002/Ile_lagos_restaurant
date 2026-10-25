@@ -118,31 +118,45 @@ document.addEventListener('DOMContentLoaded', () => {
       a.setAttribute('aria-current', 'page');
     }
   });
-  // Profile dropdown
-  const closeAll = () =>
+  // Profile dropdown. On phones it opens as a card under the bar with the page dimmed behind it.
+  const isPhone = () => matchMedia('(max-width: 575px)').matches;
+  let backdrop = null;
+  const closeAll = () => {
     document.querySelectorAll('.profile-menu.open').forEach((m) => {
       m.classList.remove('open');
+      m.style.top = '';
       m.previousElementSibling.setAttribute('aria-expanded', 'false');
     });
-  document.querySelectorAll('.profile-btn').forEach(
-    (b) =>
-      (b.onclick = (e) => {
-        e.stopPropagation();
-        const m = b.nextElementSibling,
-          o = m.classList.contains('open');
-        closeAll();
-        if (!o) {
-          m.classList.add('open');
-          b.setAttribute('aria-expanded', 'true');
-        }
-      }),
-  );
+    if (backdrop) {
+      backdrop.remove();
+      backdrop = null;
+    }
+  };
+  document.querySelectorAll('.profile-btn').forEach((b) => {
+    b.onclick = (e) => {
+      e.stopPropagation();
+      const m = b.nextElementSibling;
+      const wasOpen = m.classList.contains('open');
+      closeAll();
+      if (wasOpen) return;
+      if (isPhone()) {
+        const bar = b.closest('.ile-nav, .topbar');
+        if (bar) m.style.top = bar.getBoundingClientRect().bottom + 8 + 'px';
+        backdrop = document.createElement('div');
+        backdrop.className = 'menu-backdrop';
+        document.body.append(backdrop);
+      }
+      m.classList.add('open');
+      b.setAttribute('aria-expanded', 'true');
+    };
+  });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.profile-wrap')) closeAll();
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAll();
   });
+  window.addEventListener('resize', closeAll);
   // Logout: confirm first; redirect only after the server confirms.
   document.querySelectorAll('[data-logout]').forEach(
     (b) =>

@@ -79,3 +79,15 @@ A public, dark-only menu page for guests at the table: brand on the left, "Visit
 
 ## Image previews
 `js/image-preview.js` auto-initialises: `[data-avatar-uploader]` (customer and admin profile: shows the saved picture from `data-current`, previews a new one, Reset restores it) and `[data-multi-uploader]` (add-product: three image slots with remove buttons and drag and drop). PHP must still validate every upload.
+
+## Logo and favicon
+Supplied artwork was cut out of its black background into transparent PNGs in `assets/images/branding/`:
+- `logo-lockup-light.png` (dark text, for light backgrounds) and `logo-lockup-dark.png` (cream text, for dark backgrounds). The public navbar swaps them with the theme (`.logo-for-light` / `.logo-for-dark`).
+- `logo-stacked-dark.png` (monogram + name) is used in the preloader. `logo-mark-*.png` is the monogram alone, ready for any small spot.
+- The footer, preloader, auth pages, admin sidebar and e-menu always use the dark-background versions.
+- The tagline is live text (not part of the stacked artwork), because the tagline in the supplied branding sheet has a rendering glitch ("UNFORGE?TABLE"). The horizontal logo file has a clean tagline if you want to use that one instead.
+- Favicon files are in `assets/icons/` (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`) and are linked in every page head. Replace the files to change the icon.
+- For social sharing add an absolute `og:image` URL once the domain is known.
+
+## User menu
+On phones (<= 575px) the profile dropdown opens as a full-width card under the bar with a dimmed page behind it (`.menu-backdrop`), larger rows and the current page highlighted. On larger screens it stays an anchored dropdown. Logic: `js/main.js`; styles: end of `css/main.css`.

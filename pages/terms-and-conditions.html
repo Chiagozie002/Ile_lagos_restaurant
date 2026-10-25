@@ -34,16 +34,22 @@
     />
     <!-- Swap to Font Awesome 7 CDN URL if you have it -->
     <link rel="stylesheet" href="../css/main.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23FF7900%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%2317140f%27%3EI%3C/text%3E%3C/svg%3E"
-    />
-    <!-- favicon placeholder: replace with the real icon -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#171411" />
+    <!-- favicon: replace the files in assets/icons/ to change it -->
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <div id="preloader" aria-live="polite">
-      <div class="brand">ILE <b>Lagos</b> Chophouse</div>
+      <img
+        class="pl-logo"
+        src="../assets/images/branding/logo-stacked-dark.png"
+        alt="ILE Lagos Chophouse"
+        width="640"
+        height="491"
+      />
       <div class="muted" style="color: #c9bcae">Bold Flavours. Unforgettable Dining.</div>
       <div class="pl-bar"><i></i></div>
       <small style="color: var(--amber)">Setting the table…</small>
@@ -53,7 +59,20 @@
     <!-- START: PUBLIC NAVBAR -->
     <nav class="ile-nav navbar navbar-expand-lg">
       <div class="container">
-        <a class="brand" href="../index.html">ILE <b>Lagos</b> Chophouse</a>
+        <a class="brand brand-logo" href="../index.html" aria-label="ILE Lagos Chophouse, home"
+          ><img
+            class="logo-for-light"
+            src="../assets/images/branding/logo-lockup-light.png"
+            alt="ILE Lagos Chophouse"
+            width="568"
+            height="140" /><img
+            class="logo-for-dark"
+            src="../assets/images/branding/logo-lockup-dark.png"
+            alt=""
+            aria-hidden="true"
+            width="568"
+            height="140"
+        /></a>
         <div class="d-flex align-items-center gap-2 order-lg-3">
           <!--
             LOGIN BUTTON: uncomment when PHP session integration is ready (show only to guests).
@@ -76,7 +95,10 @@
             </button>
             <div class="profile-menu" role="menu">
               <div class="profile-head">
-                <strong>Customer Name</strong><br /><small>customer@email.com</small>
+                <span class="avatar avatar-md"><i class="fa-solid fa-user"></i></span>
+                <div class="ph-text">
+                  <strong>Customer Name</strong><small>customer@email.com</small>
+                </div>
               </div>
               <a role="menuitem" href="../user/dashboard.html"
                 ><i class="fa-solid fa-gauge"></i>Dashboard</a
@@ -105,7 +127,19 @@
         </div>
         <div class="offcanvas offcanvas-end" id="nav" tabindex="-1">
           <div class="offcanvas-header">
-            <span class="brand">ILE <b>Lagos</b></span
+            <span class="brand brand-logo"
+              ><img
+                class="logo-for-light"
+                src="../assets/images/branding/logo-lockup-light.png"
+                alt="ILE Lagos Chophouse"
+                width="568"
+                height="140" /><img
+                class="logo-for-dark"
+                src="../assets/images/branding/logo-lockup-dark.png"
+                alt=""
+                aria-hidden="true"
+                width="568"
+                height="140" /></span
             ><button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body justify-content-center">
@@ -204,7 +238,13 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4">
-            <div class="brand mb-2">ILE <b>Lagos</b> Chophouse</div>
+            <img
+              class="footer-logo"
+              src="../assets/images/branding/logo-lockup-dark.png"
+              alt="ILE Lagos Chophouse"
+              width="568"
+              height="140"
+            />
             <p>Bold Flavours. Unforgettable Dining.</p>
             <p class="small">
               Fire-led Nigerian cooking, warm hospitality and unforgettable evenings in the heart of
