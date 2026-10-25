@@ -28,16 +28,22 @@
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/auth.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23FF7900%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%2317140f%27%3EI%3C/text%3E%3C/svg%3E"
-    />
-    <!-- favicon placeholder: replace with the real icon -->
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#171411" />
+    <!-- favicon: replace the files in assets/icons/ to change it -->
   </head>
   <body class="auth">
     <a class="skip" href="#main">Skip to content</a>
     <div id="preloader">
-      <div class="brand">ILE <b>Lagos</b> Chophouse</div>
+      <img
+        class="pl-logo"
+        src="../assets/images/branding/logo-stacked-dark.png"
+        alt="ILE Lagos Chophouse"
+        width="640"
+        height="491"
+      />
       <div style="color: #c9bcae">Bold Flavours. Unforgettable Dining.</div>
       <div class="pl-bar"><i></i></div>
     </div>
@@ -47,9 +53,13 @@
       <div class="container">
         <div class="row g-4 align-items-center">
           <div class="col-lg-6 d-none d-md-block">
-            <a class="brand" href="../index.html"
-              >ILE <b style="color: #ff7900; font-weight: 400">Lagos</b> Chophouse</a
-            >
+            <a class="brand-img" href="../index.html" aria-label="ILE Lagos Chophouse, home"
+              ><img
+                src="../assets/images/branding/logo-lockup-dark.png"
+                alt="ILE Lagos Chophouse"
+                width="568"
+                height="140"
+            /></a>
             <h1 class="mt-4" style="font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem)">
               Bold Flavours. Unforgettable Dining.
             </h1>
@@ -57,9 +67,16 @@
           </div>
           <div class="col-md-8 col-lg-5 mx-auto">
             <div class="glass">
-              <a class="brand d-md-none d-block mb-3" href="../index.html"
-                >ILE <b style="color: #ff7900; font-weight: 400">Lagos</b></a
-              >
+              <a
+                class="brand-img d-md-none d-block mb-3"
+                href="../index.html"
+                aria-label="ILE Lagos Chophouse, home"
+                ><img
+                  src="../assets/images/branding/logo-lockup-dark.png"
+                  alt="ILE Lagos Chophouse"
+                  width="568"
+                  height="140"
+              /></a>
               <h2 class="h3">Welcome back</h2>
               <p class="muted">Log in to your account.</p>
               <form data-endpoint="auth/customer/login.php" data-next="../user/dashboard.html">
